@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="doctor-dashboard.css">
+    <script src="doctor-dashboard.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="Dashboard">
+            <i class="fas fa-user-md"></i>
+            <h1>Doctor Dashboard</h1>
+        </div>
+        <div><button class="log_button">logout</button></div>
+    </header>
+    <div class="grid-container">
+        <div class="container" style="grid-area: box1">
+            <div class="welcome-banner">
+                <div class="welcome-text">
+                    <h2>Welcome back, <span id="doctor-name"> Dr.Sali Johnson</span></h2>
+                    <h3><span id="doctor-speciality">Dentist</span>. <span id="doctor-clinic">Medical Center</span>
+                    </h3>
+
+                </div>
+                <div class="appoitment-today"><span class="appointment-count" id="count-appoitement-today">3</span>
+                    <p>Appoitment today</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="grid-area: box2">
+            <div class="profile-management">
+                <div class="profile-management-header">
+                    <h3>Profile management</h3>
+                  
+                </div>
+                <div class="profile-header">
+                    <img src="images/doctor-img.jpg" alt="Doctor Photo" class="profile-photo">
+                    <div>
+                        <h3>Dr. Sali Johnson</h3>
+                        <p>Cardiology Specialist</p>
+                    </div>
+                </div>
+            </div>
+            <form id="profileForm" class="profile-form" novalidate>
+                <label for="speciality">Speciality</label>
+                <input id="speciality" name="speciality" type="text" value="Dentist">
+
+                <label for="clinic">Clinic/Hospital</label>
+                <input id="clinic" name="clinic" type="text" value="medical center">
+
+                <label for="phone">Contact Number</label>
+                <input id="phone" name="phone" type="text" value="0512345678">
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" value="doctor@gmail.com">
+
+                <small style="color:red; display:block; margin-top:10px;"></small>
+
+                <button id="Submit_Btn" class="form-button" type="submit">Update profile</button>
+            </form>
+        </div>
+        <div class="container gridbox3" style="grid-area: box3">
+            <div class="box03 box31" style="grid-area: box31">
+                <h2>Availability Management</h2>
+                <div class="status">
+                    <span>Status:</span>
+                    <span class="status-badge available">Available</span>
+                </div>
+            </div>
+            <div class="box03" style="grid-area: box32">
+                <div class="Quik-action">
+                    <p>Quik Actions : </p>
+                </div>
+                <div class="buttons-Quik-action">
+                    <button class="buttons-Quik-action1"><i class="fa fa-lock-open"></i>Open all slots</button>
+                    <button class="buttons-Quik-action2"><i class="fa fa-lock"></i>Close all slots</button>
+                    <button class="buttons-Quik-action3"><i class="fa fa-pause"></i>Emergency Break</button>
+                </div>
+
+            </div>
+            <div class="box03" style="grid-area: box33">
+                <div class="time-slots">
+                    <h3>Time Slots Today</h3>
+                    <div class="slot open-slot">
+                        <span>09:00 - 12:00</span>
+                        <span class="tag open">Open</span>
+                    </div>
+                    <div class="slot limited-slot">
+                        <span>14:00 - 17:00</span>
+                        <span class="tag limited">Limited</span>
+                    </div>
+                    <div class="slot closed-slot">
+                        <span>18:00 - 20:00</span>
+                        <span class="tag closed">Closed</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="container box04" style="grid-area: box4">
+            <div class="appointments-container">
+                <div class="appointments-header">
+                    <h2>Today's Appointments</h2>
+                    <div class="header-actions">
+                        <select class="filter-select">
+                            <option>Today</option>
+                            <option>This Weak</option>
+                            <option>This Month</option>
+                        </select>
+                        <button id="addAppointmentBtn" class="add-btn"><i class="fa fa-plus"></i> Add
+                            Appointment</button>
+                    </div>
+                </div>
+
+                <div class="appointment-card">
+                    <div class="patient-info">
+                        <div class="patient-icon blue-bg"><i class="fa fa-user"></i></div>
+                        <div>
+                            <h3>John Smith</h3>
+                            <p>Regular Checkup</p>
+                            <span>Patient ID: #12345</span>
+                        </div>
+                    </div>
+                    <div class="appointment-details">
+                        <h4>09:30 AM</h4>
+                        <p class="status confirmed">Confirmed</p>
+                        <div class="actions">
+                            <i class="fa fa-edit"></i>
+                            <i class="fa fa-times"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appointment-card">
+                    <div class="patient-info">
+                        <div class="patient-icon purple-bg"><i class="fa fa-user"></i></div>
+                        <div>
+                            <h3>Maria Garcia</h3>
+                            <p>Follow-up Consultation</p>
+                            <span>Patient ID: #12346</span>
+                        </div>
+                    </div>
+                    <div class="appointment-details">
+                        <h4>10:15 AM</h4>
+                        <p class="status pending">Pending</p>
+                        <div class="actions">
+                            <i class="fa fa-edit"></i>
+                            <i class="fa fa-times"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="appointment-card">
+                    <div class="patient-info">
+                        <div class="patient-icon green-bg"><i class="fa fa-user"></i></div>
+                        <div>
+                            <h3>Robert Johnson</h3>
+                            <p>Cardiac Assessment</p>
+                            <span>Patient ID: #12347</span>
+                        </div>
+                    </div>
+                    <div class="appointment-details">
+                        <h4>11:00 AM</h4>
+                        <p class="status confirmed">Confirmed</p>
+                        <div class="actions">
+                            <i class="fa fa-edit"></i>
+                            <i class="fa fa-times"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="view-all">
+                    <a href="#">View All Appointments </a>
+                </div>
+            </div>
+        </div>
+        <div class="container container5" style="grid-area: box5">
+            <div class="box5">
+                <div class="daily-patient-limit">
+                    <h2>Daily Patient Limit</h2>
+                </div>
+                <div class="patient-bar">
+                    <div class="limit-info">
+                        <h3>Current limit</h3>
+
+                        <div class="limit-number-patient"><span id="limit-number">15</span>
+                            <p>patients</p>
+                        </div>
+                    </div>
+                    <div class="progress-info">
+                        <p>Today's progress : </p>
+                        <span class="patient-count">0</span>/<span id="progress-text">15</span>
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill">
+                    </div>
+                </div>
+                <div class="limit-slider">
+                    <label for="limitSlider">Set new daily limit </label>
+                    <div class="slider-container">
+                        <input type="range" id="limitSlider" min="1" max="100" value="15"
+                            />
+                        <span id="sliderValue">15</span>
+                    </div>
+                </div>
+
+                <button  id="updateLimitBtn">Update limit</button>
+            </div>
+        </div>
+        <div class="container box06" style="grid-area: box6;">
+            <div class="stats-box">
+                <h3>This Week</h3>
+                <div class="stats-info">
+                    <h2 id="week-count">67</h2>
+                    <div class="stats-icon week-icon">📅</div>
+                </div>
+                <p id="week-change">+12% from last week</p>
+            </div>
+        </div>
+        <div class="container box07" style="grid-area: box7;">
+            <div class="stats-box">
+                <h3>This Month</h3>
+                <div class="stats-info">
+                    <h2 id="month-count">284</h2>
+                    <div class="stats-icon month-icon">👥</div>
+                </div>
+                <p id="month-change">+8% from last month</p>
+            </div>
+        </div>
+        <div class="container box08" style="grid-area: box8;">
+            <div class="stats-box">
+                <h3>Avg. Rating</h3>
+                <div class="stats-info">
+                    <h2 id="rating-count">4.8</h2>
+                    <div class="stats-icon rating-icon">⭐</div>
+                </div>
+                <p id="rating-change">★★★★★ (127 reviews)</p>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- Add Appointment Popup -->
+    <div id="addAppointmentPopup" class="popup">
+        <div class="popup-content">
+            <h3>Add New Appointment</h3>
+
+            <label>First Name:</label>
+            <input type="text" id="firstNameInput">
+
+            <label>Last Name:</label>
+            <input type="text" id="lastNameInput">
+
+            <label>Patient ID:</label>
+            <input type="text" id="idInput">
+            <div class="button-group">
+            <button id="addAppointmentConfirm">Add</button>
+            <button id="addAppointmentCancel">Cancel</button>
+        </div> </div>
+    </div>
+
+</body>
